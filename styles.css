@@ -1,4 +1,23 @@
+* {
+    box-sizing: border-box;
+
+}
+body{
+    background-color: #FCF2F4;
+}
+
+header {
+    background-color: #EFDBDD;
+
+}
+
+div{
+    width: 40vh;
+    height: 60vh;
+    float: left;
+}
+
 h1 {
     font-size: 4rem;
-    color: purple;
+    color: #D97E96;
 }
