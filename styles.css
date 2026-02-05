@@ -1,11 +1,15 @@
+/* da fonts**********************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/**********************************************************************/
 * {
     box-sizing: border-box;
 
 }
 header {
-    padding: 10px;
-    background-color: #EFDBDD;
-    box-shadow: 0 0 1em #EFDBDD;
+    background-color: #0F594C;
+    box-shadow: 0 0 1em #0F594C;
 }
 
 body{
@@ -13,14 +17,17 @@ body{
 }
 
 h1 {
+    font-family: "Limelight", sans-serif;
     text-align: center;
     font-size: 3rem;
-    color: #D43468; 
+    color: #EFDBDD; 
+    font:
 }
 
 h2 {
+    font-family: "Limelight", sans-serif;
     font-size: 2rem;
-    color: #0F594C;
+    color: #218371;
 }
 
 
@@ -30,14 +37,55 @@ div{
     float: left;
 }
 
+a{
+    padding: .5em;
+    border: solid 1px #4D8C63;
+    border-radius: 1em;
+    background-color:#B8D9C0;
+    color: #4D8C63; 
+    font-size: 1.5rem; 
+    width: 20%;
+    text-decoration: none;
+    font-family: "Quattrocento Sans", sans-serif;
+}
+p{
+    font-family: "Quattrocento Sans", sans-serif;
+    color: #0F594C ;
+}
+
 /*Coursework div ****************************************************************************/
 
 .coursework section{
     background-color:#EFDBDD;
-
+    height: 149vh;
+    border: solid 1em #FCF2F4;
+    border-radius: 2em;
+    display: flex;
+    flex-direction:column; /*this line took so long to find*/
+    align-items: center;
+    line-height: 10%;
 }
 
+.coursework section ul {
+    padding: .1em;
+    color: #4D8C63; 
+    font-size: 1.5rem; 
+    text-align: center;
+    width: 60%;
+    list-style-position: inside;
+}
 
+.coursework section ul li{
+    border: solid 1px #4D8C63;
+    border-radius: 1em;
+    background-color:#B8D9C0;
+    margin: 1em;
+    padding: 1em;
+}
+.coursework section p{
+    font-size: 1.5rem;
+    color: #0F594C;
+}
 
 /*Questions div ****************************************************************************/
 
@@ -45,8 +93,6 @@ div{
     width: 70%;
     height: 100%;
     background-color:#FCF2F4;
-
-
 }
 
 .quesitons section{
@@ -55,9 +101,13 @@ div{
     width: 50%;
     height: 30%;
     padding: 1em;
-    border: solid 10px #FCF2F4;
-    border-radius: 1em;
-    background-color:#B8D9C0;
+    border: solid 1em #FCF2F4;
+    border-radius: 2em;
+    background-color:#EFDBDD;
+}
+
+.quesitons a{
+    font-size: 1em;
 }
 
 div #coolpic{
@@ -72,5 +122,5 @@ img{
     width: 80%;
     margin-left:auto;
     margin-right:auto;
-    box-shadow: 0 0 1em #4D8C63;
+    box-shadow: 0 0 1em #D97E96;
 }
