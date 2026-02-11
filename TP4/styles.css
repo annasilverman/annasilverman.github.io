@@ -1,3 +1,9 @@
+/* da fonts**********************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/**********************************************************************/
+
 :root{
     --gameboard: 60vh;
     --phonebackground: 95%;
@@ -9,6 +15,13 @@ main{
     align-items: center;
     justify-content: center;
 
+}
+
+h1{
+    font-family: "Limelight", sans-serif;
+    color:#0F594C;
+    text-align: center;
+    font-size: 3rem;
 }
 
 #background{
@@ -32,10 +45,18 @@ main{
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1em;
 
-
 }
 
 #square{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     position: relative;
     background-color: #FCF2F4;
+    font-family: "Limelight", sans-serif;
+    font-size: 10rem;
+    color:#218371;
+    overflow: hidden;
 }
+
