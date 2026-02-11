@@ -3,6 +3,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 /**********************************************************************/
+
+/* responsive**********************************************************/
 @media only screen and (orientation: landscape){ /*trying to be fancy when i know damn well i dont have time for this*/
     #background{
     width:var(--laptopbackground);
@@ -16,6 +18,9 @@
         height: var(--phonebackground);
     }
 }
+/********************************************************************/
+
+/* the game**********************************************************/
 :root{
     --gameboard: 60vh;
     --phonebackground: 95%;
@@ -71,3 +76,4 @@ h1{
     overflow: hidden;
 }
 
+/*game over**********************************************************/
