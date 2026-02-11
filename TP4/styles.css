@@ -1,17 +1,41 @@
 :root{
-    --gameboard: 75%;
+    --gameboard: 60vh;
+    --phonebackground: 95%;
+    --laptopbackground: 90vh;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#background{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width:var(--laptopbackground);
+    height: var(--laptopbackground);
+    background-color: #FCF2F4;
 }
 
 #game{
     position: relative;
     width: var(--gameboard);
-    height: var(--gamebord);
+    height: var(--gameboard);
     background-color: #D97E96;
 
     display:grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: .1em;
+    gap: 1em;
 
-    
+
+}
+
+#square{
+    position: relative;
+    background-color: #FCF2F4;
 }
