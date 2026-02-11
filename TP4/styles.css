@@ -5,17 +5,17 @@
 /**********************************************************************/
 
 /* responsive**********************************************************/
-@media only screen and (orientation: landscape){ /*trying to be fancy when i know damn well i dont have time for this*/
+@media only screen and (orientation: landscape){ 
     #background{
     width:var(--laptopbackground);
-    height: var(--laptopbackground);
+    height:var(--laptopbackground);
     }
 }
 
 @media only screen and (orientation: portrait){
     #background{
         width:var(--phonebackground);
-        height: var(--phonebackground);
+        height:var(--phonebackground);
     }
 }
 /********************************************************************/
@@ -24,7 +24,7 @@
 :root{
     --gameboard: 60vh;
     --phonebackground: 95%;
-    --laptopbackground: 90vh;
+    --laptopbackground: 85vh;
 }
 body{
     background-color:#EFDBDD;
