@@ -1,0 +1,17 @@
+:root{
+    --gameboard: 75%;
+}
+
+#game{
+    position: relative;
+    width: var(--gameboard);
+    height: var(--gamebord);
+    background-color: #D97E96;
+
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .1em;
+
+    
+}
