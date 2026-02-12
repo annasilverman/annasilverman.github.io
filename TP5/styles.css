@@ -33,3 +33,12 @@ transform-style: preserve-3d;
     transform: rotate3d(180deg);
 }
 
+.gameboard{
+    position: absolute;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1em;
+    width: 100%
+
+}
