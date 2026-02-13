@@ -1,5 +1,34 @@
+*{
+box-sizing: border-box;
+}
+
 :root{
     --cardSize: 250px;
+}
+
+main{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.background{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 70%;
+    height: 70vh;
+    background-color:#FCF2F4;
+}
+
+.gameboard{
+    position: absolute;
+    display:grid;
+    align-items: center;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: .5em;
+
 }
 
 .card{
@@ -11,34 +40,33 @@
 }
 
 .cardContent{
-position: absolute;
-width: 100%;
-height: 100%;
-background-color: #D97E96;
-color: #0F594C;
-transition: transform 0.5s;
-transform-style: preserve-3d;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
 }
 
-.cardTop,
-.cardBottom{
+
+.cardfront,
+.cardback{
     position: absolute;
     background-color: #4D8C63;
     color:white;
     width: 100%;
     height: 100%;
+    backface-visibility: hidden;
+}
 
+.cardfront{
+    background-color: #D97E96;
+}
+
+.cardback{
+    background-color:#0F594C;
+    transform: rotateY(180deg);
 }
 .card:hover .cardContent{
-    transform: rotate3d(180deg);
+    transform: rotateY(180deg);
 }
 
-.gameboard{
-    position: absolute;
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 1em;
-    width: 100%
-
-}
