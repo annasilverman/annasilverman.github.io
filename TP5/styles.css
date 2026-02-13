@@ -1,3 +1,10 @@
+/* Tiny Project 5: Concentraition******************************/
+/* da fonts**********************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/**********************************************************************/
+
 *{
 box-sizing: border-box;
 }
@@ -6,10 +13,20 @@ box-sizing: border-box;
     --cardSize: 250px;
 }
 
+body{
+    background-color: #EFDBDD;
+}
 main{
     display: flex;
     justify-content:center;
     align-items: center;
+}
+
+h1{
+    font-family: "Limelight", sans-serif;
+    text-align: center;
+    font-size: 4rem;
+    color:#0f594c;
 }
 
 .background{
@@ -20,9 +37,11 @@ main{
     height: 70vh;
     background-color:#FCF2F4;
 }
+/*************************************************/
 
+/* Game Board set up******************************/
 .gameboard{
-    position: absolute;
+    position: relative;
     display:grid;
     align-items: center;
     grid-template-rows: 1fr 1fr;
@@ -31,11 +50,39 @@ main{
 
 }
 
+/* Game Board Mobile set up***********************/
+@media only screen and (orientation: portrait){
+:root{
+    --cardSize: 7em;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+.background{
+    width: 95%;
+    height: 80vh;
+}
+.gameboard{
+    position: relative;
+    display:grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: .5em;
+}
+
+}
+/************************************************/
+
+/*Card look**************************************/
+
 .card{
     position: relative;
     width: var(--cardSize);
     height: var(--cardSize);
-    perspective: 600px; /*spooky*/
+    perspective: 600px; 
 
 }
 
@@ -52,21 +99,40 @@ main{
 .cardback{
     position: absolute;
     background-color: #4D8C63;
-    color:white;
+    color:#FCF2F4;
+    font-size: 5rem;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
 }
 
 .cardfront{
-    background-color: #D97E96;
+  --s: 100px; /* control the size*/
+  --c1: #0f594c;
+  --c2: #d97e96;
+  
+  --_g: 
+     var(--c2) 6%  14%,var(--c1) 16% 24%,var(--c2) 26% 34%,var(--c1) 36% 44%,
+     var(--c2) 46% 54%,var(--c1) 56% 64%,var(--c2) 66% 74%,var(--c1) 76% 84%,var(--c2) 86% 94%;
+  background:
+    radial-gradient(100% 100% at 100% 0,var(--c1) 4%,var(--_g),#0008 96%,#0000),
+    radial-gradient(100% 100% at 0 100%,#0000, #0008 4%,var(--_g),var(--c1) 96%)
+    var(--c1);
+  background-size: var(--s) var(--s);
 }
 
 .cardback{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color:#0F594C;
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
+
+    font-family: "Limelight", sans-serif;
+    text-align: center;
 }
 .card:hover .cardContent{
-    transform: rotateY(180deg);
+    transform: rotateX(180deg);
 }
+/***********************************************/
 
