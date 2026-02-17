@@ -11,18 +11,22 @@
 body{
     padding: 0;
     margin: 0;
+    font-family: "Quattrocento Sans", sans-serif;
+
+    display: flex;
+
     
 }
 
 main{
 
-    background-color:#FCF2F4;
+    background-color:#EFDBDD;
     position: relative;
     width: 100vw;
     height: 100vh;
 
     display: grid;
-    grid-template-columns: 33vw 33vw 34vw;
+    grid-template-columns: 34vw 33vw 3vw;
     grid-template-rows: 10vh 30vh 30vh 30vh;
     grid-template-areas:
         'location  location  location'
@@ -32,34 +36,77 @@ main{
 }
 
 #location{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     grid-area: location;
     font-family: "Limelight", sans-serif;
+    background-color:#FCF2F4;
     color:#D97E96;
-    text-align: center;
     font-size: 2rem;
 }
 
+p{
+    color:#218371;
+    font-size:1rem;
+}
+/* Section 1: current info*****************************************************/
+
 #currentweathericon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     grid-area: currentweathericon;
     background-color: #EFDBDD;
+
 }
 
 #currentweatherinfo{
+    display: flex;
+    justify-content: center;
+    flex-direction:column; 
+
     grid-area: currentweatherinfo;
-    background-color: #D97E96;
+    background-color: #EFDBDD;
+    text-align: center;
+    font-size: 2rem;
+    color: #218371;
 }
 
+#currentweatherinfo .currentTemp{
+    font-family: "Limelight", sans-serif; /*current no longer looks like a real word to me*/
+    font-size: 5rem;
+    color: #0F594C;
+}
+
+/* Section 2: Wind + Humidity*****************************************************/
 #windinfo{
+    padding: .3em;
     grid-area: windinfo;
-    background-color:aqua;
+    display: flex;
+    flex-direction:column; 
+    justify-content: center;
+
+}
+#windinfo div{
+    color:#0F594C;
+    font-family: "Limelight", sans-serif;
+    font-size: 1.2rem;
 }
 
 #compass{
     grid-area: compass;
-    background-color:bisque;
 }
 
-#futureinfo{
+/* Section 3: Future info*****************************************************/
+#predictions{
+    display: flex; /*i feel like there is an easier way of adding flex direction but when i add it to main everything breaks*/
+    justify-content: center;
+    align-items: center;
+
     grid-area: futureinfo;
-    background-color:#0F594C;
+    width: 90vw;
+
 }
