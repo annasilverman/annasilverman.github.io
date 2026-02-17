@@ -18,53 +18,57 @@
             <div id= "location">Pullman</div>
             <!--current weather and temp, splitting up icon and info to float left-->
 
-                <div id= "currentweathericon"></div>
+                <div class="block" id="currentweathericon"><img id="current weather" src="weathericons/day.svg"></div>
 
-                <div id= "currentweatherinfo">
+                <div class="block" id="currentweatherinfo">
                     <div class= "currentTemp">78</div>
                     <div class= "currentDescription">Sunny</div>
                 </div>
 
 <!-- Going to be humidity and have cool compass hopefully-->
 
-                <div id= "windinfo">
+                <div class="block" id="windinfo">
                     <p>Wind Direction:</p>
                     <div class="windDirection">Northwest</div>
                     <p>Humidity:</p>
                     <div class= "humidity">56%</div>
                 </div>
 
-                <div id= "compass"></div>
+                <div id="compass" class="block"><img id="compassimg" src="weathericons/compass.png"></div>
 
 
 <!--future info-->            
             <div id="predictions">
 
-                <div class="futureDay">
-                    <div class="futureicon"></div>
-                    <div class="futureTemp">78</div>
-                    <div class="futureStatus">sunny</div>                
-                    <div class="futureWind">4mph NW</div>
+                <div class="block futureDay">
+                    <div class="futureicon"><img id="futureIcon" src="weathericons/rainy.svg"></div>
+                    <div class="futureTemp">40</div>
+                    <div class="futureStatus">Rainy</div>                
+                    <div class="futureWind">15mph NE</div>
                 </div>
 
-                <div class="futureDay">
-                    <div class="futureicon"></div>
-                    <div class="futureTemp">78</div>
-                    <div class="futureStatus">sunny</div>                
-                    <div class="futureWind">4mph NW</div>
+                <div class="block futureDay">
+                    <div class="futureicon"><img id="futureIcon" src="weathericons/cloudy-day.svg"></div>
+                    <div class="futureTemp">60</div>
+                    <div class="futureStatus">partly cloudy</div>                
+                    <div class="futureWind">8mph NW</div>
                 </div>
 
-                <div class="futureDay">
-                    <div class="futureicon"></div>
-                    <div class="futureTemp">78</div>
+                <div class="block futureDay">
+                    <div class="futureicon"> <img id="futureIcon" src="weathericons/day.svg"></div> <!--these are the best icons i've ever found-->
+                    <div class="futureTemp">80</div>
                     <div class="futureStatus">sunny</div>                
                     <div class="futureWind">4mph NW</div>
                 </div>
                                 
             </div>
             
+        <div class="block" id="credit">
+            <p>Credit for icons: </p>
+            <a href="https://www.amcharts.com/free-animated-svg-weather-icons/" Weather icons found on amCharts></a>
+             <a href="https://www.flaticon.com/free-icons/compass" title="compass icons">Compass icons created by Amethyst prime - Flaticon</a>
+         </div>
 
-     <a href="https://www.flaticon.com/free-icons/compass" title="compass icons">Compass icons created by Amethyst prime - Flaticon</a>
     </main>
 
 </body>

@@ -13,26 +13,36 @@ body{
     margin: 0;
     font-family: "Quattrocento Sans", sans-serif;
 
-    display: flex;
-
-    
 }
 
 main{
 
-    background-color:#EFDBDD;
+    background-color:#FCF2F4;
     position: relative;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 
     display: grid;
-    grid-template-columns: 34vw 33vw 3vw;
+    grid-template-columns: 33vw 33vw 33vw;
     grid-template-rows: 10vh 30vh 30vh 30vh;
     grid-template-areas:
         'location  location  location'
         'currentweathericon  currentweathericon  currentweatherinfo'
         'windinfo  compass  compass'  /*this is so scary to me*/
         'futureinfo  futureinfo  futureinfo'; /*IM SO HAPPY I FIGURED IT OUT*/
+}
+ 
+p{
+    color:#218371;
+    font-size: .8rem;
+}
+
+a{
+    color:#218371;
+}
+
+a:hover{
+    color: #4D8C63;
 }
 
 #location{
@@ -47,20 +57,25 @@ main{
     font-size: 2rem;
 }
 
-p{
-    color:#218371;
-    font-size:1rem;
-}
+
 /* Section 1: current info*****************************************************/
+.block{
+    background-color:#EFDBDD;
+    border: solid .3em #FCF2F4;
+    border-radius: 1em;
+}
 
 #currentweathericon{
     display: flex;
     align-items: center;
     justify-content: center;
-
     grid-area: currentweathericon;
-    background-color: #EFDBDD;
 
+}
+
+#currentweathericon img{
+    width: 50vh;
+    height: 50vh;
 }
 
 #currentweatherinfo{
@@ -69,16 +84,17 @@ p{
     flex-direction:column; 
 
     grid-area: currentweatherinfo;
-    background-color: #EFDBDD;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
     color: #218371;
+
 }
 
 #currentweatherinfo .currentTemp{
     font-family: "Limelight", sans-serif; /*current no longer looks like a real word to me*/
     font-size: 5rem;
     color: #0F594C;
+
 }
 
 /* Section 2: Wind + Humidity*****************************************************/
@@ -98,6 +114,17 @@ p{
 
 #compass{
     grid-area: compass;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+#compassimg{
+    width:10em;
+    height: 10em;
+    transform: rotate(45deg); /*the goal is to make this rotate with the degrees of the wind*/
 }
 
 /* Section 3: Future info*****************************************************/
@@ -107,6 +134,45 @@ p{
     align-items: center;
 
     grid-area: futureinfo;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 
 
+}
+.futureDay{
+    display: flex;
+    flex-direction:column; 
+    justify-content: flex-end;
+    align-items: center;
+
+    width:45%;
+    height: 90%;
+    background-color: #EFDBDD;
+    padding:.3em;
+
+}
+.futureDay div{
+    color:#0F594C
+}
+
+.futuretemp{
+    font-family: "Limelight", sans-serif;
+    font-size: 2rem;
+}
+#credit{
+    display: flex;
+    flex-direction:column;
+
+    position:absolute;
+    width:100%;
+    top:100%;
+    padding:.5em;
+}
+
+#futureIcon{
+    padding-top:.5em;
+    justify-content: flex-start;
+    width:7em;
+    height:7em;
 }
