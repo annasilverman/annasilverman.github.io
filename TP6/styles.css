@@ -1,0 +1,65 @@
+/* da fonts*****gotta be on brand always*****************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/**********************************************************************/
+*{
+    box-sizing:border-box;
+
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    
+}
+
+main{
+
+    background-color:#FCF2F4;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 33vw 33vw 34vw;
+    grid-template-rows: 10vh 30vh 30vh 30vh;
+    grid-template-areas:
+        'location  location  location'
+        'currentweathericon  currentweathericon  currentweatherinfo'
+        'windinfo  compass  compass'  /*this is so scary to me*/
+        'futureinfo  futureinfo  futureinfo'; /*IM SO HAPPY I FIGURED IT OUT*/
+}
+
+#location{
+    grid-area: location;
+    font-family: "Limelight", sans-serif;
+    color:#D97E96;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#currentweathericon{
+    grid-area: currentweathericon;
+    background-color: #EFDBDD;
+}
+
+#currentweatherinfo{
+    grid-area: currentweatherinfo;
+    background-color: #D97E96;
+}
+
+#windinfo{
+    grid-area: windinfo;
+    background-color:aqua;
+}
+
+#compass{
+    grid-area: compass;
+    background-color:bisque;
+}
+
+#futureinfo{
+    grid-area: futureinfo;
+    background-color:#0F594C;
+}
