@@ -6,6 +6,18 @@
 *{
     box-sizing:border-box;
 
+    --padding: .3rem;
+    --currentWeather: 50vh;
+    --compass: 10em;
+    --futureIcon: 15vh;
+    --border: 1em;
+    --paddingtop: 1.5em;
+
+    --locationSize: 2rem;
+    --CurrentTemp: 4rem;
+    --pSize: .8rem;
+    --windinfo: 1.2rem;
+    --futuretemp: 3rem;
 }
 
 body{
@@ -24,17 +36,18 @@ main{
 
     display: grid;
     grid-template-columns: 33vw 33vw 33vw;
-    grid-template-rows: 10vh 35vh 30vh 25vh;
+    grid-template-rows: 10vh 30vh 30vh 25vh 20vh;
     grid-template-areas:
         'location  location  location'
         'currentweathericon  currentweathericon  currentweatherinfo'
         'windinfo  compass  compass'  /*this is so scary to me*/
-        'futureinfo  futureinfo  futureinfo'; /*IM SO HAPPY I FIGURED IT OUT*/
+        'futureinfo  futureinfo  futureinfo'
+        'credit credit credit'; /*IM SO HAPPY I FIGURED IT OUT*/
 }
  
 p{
     color:#218371;
-    font-size: .8rem;
+    font-size: var(--pSize);
 }
 
 a{
@@ -53,8 +66,8 @@ a:hover{
     grid-area: location;
     font-family: "Limelight", sans-serif;
     background-color:#FCF2F4;
-    color:#D97E96;
-    font-size: 2rem;
+    color:#0F594C;
+    font-size: var(--locationSize);
 }
 
 
@@ -74,8 +87,8 @@ a:hover{
 }
 
 #currentweathericon img{
-    width: 50vh;
-    height: 50vh;
+    width: var(--currentWeather);
+    height: var(--currentWeather);
 }
 
 #currentweatherinfo{
@@ -85,21 +98,20 @@ a:hover{
 
     grid-area: currentweatherinfo;
     text-align: center;
-    font-size: 1rem;
     color: #218371;
 
 }
 
 #currentweatherinfo .currentTemp{
     font-family: "Limelight", sans-serif; /*current no longer looks like a real word to me*/
-    font-size: 5rem;
+    font-size: var(--CurrentTemp);
     color: #0F594C;
 
 }
 
 /* Section 2: Wind + Humidity*****************************************************/
 #windinfo{
-    padding: .3em;
+    padding: var(--padding);
     grid-area: windinfo;
     display: flex;
     flex-direction:column; 
@@ -109,7 +121,7 @@ a:hover{
 #windinfo div{
     color:#0F594C;
     font-family: "Limelight", sans-serif;
-    font-size: 1.2rem;
+    font-size: var(--windinfo);
 }
 
 #compass{
@@ -122,21 +134,25 @@ a:hover{
 }
 
 #compassimg{
-    width:10em;
-    height: 10em;
+    width: var(--compass);
+    height: var(--compass);
     transform: rotate(45deg); /*the goal is to make this rotate with the degrees of the wind*/
 }
 
 /* Section 3: Future info*****************************************************/
 #predictions{
     display: flex; /*i feel like there is an easier way of adding flex direction but when i add it to main everything breaks*/
-    justify-content: center;
-    align-items: center;
+    overflow: auto;
+    overflow-y:hidden; 
 
     grid-area: futureinfo;
+    position: absolute;
     width: 100%;
     height: 100%;
 
+    /*NO SCROLL BARS on mobile at least*/
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
 
 }
 .futureDay{
@@ -146,31 +162,56 @@ a:hover{
     align-items: center;
 
     width:45%;
+    height:100%;
     background-color: #EFDBDD;
-    padding:.3em;
+    padding: var(--padding);
 
 }
 .futureDay div{
-    color:#0F594C
+    color:#0F594C;
 }
 
 .futuretemp{
     font-family: "Limelight", sans-serif;
-    font-size: 2rem;
+    font-size: var(--futuretemp);
 }
+
+
+#futureIcon{
+    padding-top: 2em;
+    width:var(--futureIcon);
+    height:var(--futureIcon);
+}
+
 #credit{
+    grid-area:credit;
     display: flex;
     flex-direction:column;
 
-    position:absolute;
+    position: relative;
     width:100%;
-    top:100%;
     padding:.5em;
 }
 
-#futureIcon{
-    padding-top:.5em;
-    justify-content: flex-start;
-    width:7em;
-    height:7em;
+/* Section 3: responsive for desktop*****************************************************/
+@media only screen and (orientation: landscape){
+    *{
+        --compass: 20vh;
+        --futureIcon: 20vh;
+        --border: 3em;
+        --paddingtop: 1.5em;
+
+        /*font sizes*********************/
+         --locationSize: 4rem;
+        --CurrentTemp: 8rem;
+        --pSize: 2rem;
+        --windinfo: 2rem;
+        --futuretemp: 4rem;
+    }
+
+    main{
+        grid-template-rows: 10vh 30vh 30vh 29vh 15vh;
+    }
+
+
 }
