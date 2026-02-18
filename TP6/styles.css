@@ -204,7 +204,7 @@ a:hover{
         /*font sizes*********************/
          --locationSize: 4rem;
         --CurrentTemp: 8rem;
-        --pSize: 2rem;
+        --pSize: 1.5rem;
         --windinfo: 2rem;
         --futuretemp: 4rem;
     }
