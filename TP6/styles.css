@@ -71,12 +71,13 @@ a:hover{
 }
 
 
-/* Section 1: current info*****************************************************/
 .block{
     background-color:#EFDBDD;
     border: solid .3em #FCF2F4;
     border-radius: 1em;
 }
+
+/* Section 1: current info*****************************************************/
 
 #currentweathericon{
     display: flex;

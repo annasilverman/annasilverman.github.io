@@ -43,7 +43,7 @@ h1{
     font-size: 3rem;
 }
 
-#background{
+.game-background{
     width:var(--background);
     height:var(--background);
     display: flex;
@@ -52,7 +52,7 @@ h1{
     background-color: #FCF2F4;
 }
 
-#game{
+.game{
     position: relative;
     width: var(--gameboard);
     height: var(--gameboard);
@@ -65,7 +65,7 @@ h1{
 
 }
 
-#square{
+.square{
     display: flex;
     align-items: center;
     justify-content: center;
