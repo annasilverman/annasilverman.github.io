@@ -10,7 +10,9 @@ box-sizing: border-box;
 }
 
 :root{
-    --cardSize: 250px;
+    --cardSize: 10em;
+    --backgroundHeight:80vh;
+    --backgroundWidth: 50vw;
 }
 
 body{
@@ -33,8 +35,8 @@ h1{
     display: flex;
     justify-content:center;
     align-items: center;
-    width: 70%; /*code was acting weird with percentages for the width*/
-    height: 70vh;
+    width: var(--backgroundWidth); 
+    height: var(--backgroundHeight);
     background-color:#FCF2F4;
 }
 /*************************************************/
@@ -53,17 +55,16 @@ h1{
 /* Game Board Mobile set up***********************/
 @media only screen and (orientation: portrait){
 :root{
-    --cardSize: 7em;
+    --cardSize: 8em;
+    --backgroundHeight: 150%;
+    --backgroundWidth: 95vw;
 }
 
 h1{
     font-size: 2rem;
 }
 
-.background{
-    width: 95vh;
-    height: 80%;
-}
+
 .gameboard{
     position: relative;
     display:grid;
