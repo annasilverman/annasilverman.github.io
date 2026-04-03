@@ -41,6 +41,30 @@ function clickSquare() {
     console.log(rowB);
     console.log(rowC);
 
+    
+      // get a handle on the DOM element to be updated with the outcome
+      let gameOutputMsg = document.querySelector("#gameResult span");
+
+
+      // call your function checkGameboard() with the 3 rows
+      let winState = checkGameboard(rowA, rowB, rowC);
+
+      // test the returned value of the function
+      if (winState == "x") {
+        gameOutputMsg.innerHTML = "X wins";
+
+      } else if (winState == "o") {
+        gameOutputMsg.innerHTML = "O wins";
+
+      } else if (winState == "d") {
+        gameOutputMsg.innerHTML = "draw";
+
+      } else {
+        gameOutputMsg.innerHTML = "unknown";
+      }
+
+
+
 
      //switches x and o depending on which turn was last
      if (currentTurn == "x") currentTurn = "o";
@@ -129,27 +153,4 @@ function checkArray(value1, value2, value3){ //modified version of the example c
 }
 
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// get a handle on the DOM element to be updated with the outcome
-let gameOutputMsg = document.querySelector("#gameResult span");
-
-
-// call your function checkGameboard() with the 3 rows
-let winState = checkGameboard(rowA, rowB, rowC);
-
-// test the returned value of the function
-if (winState == "x") { 
-  gameOutputMsg.innerHTML = "X wins";
-  
-} else if (winState == "o") {
-  gameOutputMsg.innerHTML = "O wins";
-  
-} else if (winState == "d") {
-  gameOutputMsg.innerHTML = "draw";
-  
-} else {
-  gameOutputMsg.innerHTML = "unknown";
-}
-
-*/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
