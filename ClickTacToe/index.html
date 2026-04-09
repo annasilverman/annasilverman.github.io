@@ -5,43 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="styles.css" media="all">
-        <script src= "scripts.js" defer></script>
+    <script src="scripts.js" defer></script>
 
 </head>
 
 <body>
-
     <header>
         <h1> Tiny Project 4: Tic Tac Toe</h1>
     </header>
 
     <main>
 
-            <div class="game-background">
-            <div id="currentPlayer"><span> </span></div>
-            <div id= "gameResult">no winner yet</div>
-            
-        <div class=" game-background">
-            <div class="game">
-                <!-- row 1-->
-                 <div class="square" id="a1"></div>
-                 <div class="square" id="a2"></div>
-                 <div class="square" id="a3"></div>
-
-                <!-- row 2-->
-                 <div class="square" id="b1"></div>
-                 <div class="square" id="b2"></div>
-                 <div class="square" id="b3"></div>
-
-                <!-- row 3-->
-                 <div class="square" id="b1"></div>
-                 <div class="square" id="c2"></div>
-                 <div class="square" id="c3"></div>
-                                  
-            </div>
-
+        <div id="currentPlayer">
+            Current Player: <span> </span>
         </div>
+
+        <br>
+
+        <div class="gamearea">
+                <div class=" game-background">
+                    <div class="game">
+                        <!-- row 1-->
+                        <div class="square" id="a1"></div>
+                        <div class="square" id="a2"></div>
+                        <div class="square" id="a3"></div>
+
+                        <!-- row 2-->
+                        <div class="square" id="b1"></div>
+                        <div class="square" id="b2"></div>
+                        <div class="square" id="b3"></div>
+
+                        <!-- row 3-->
+                        <div class="square" id="b1"></div>
+                        <div class="square" id="c2"></div>
+                        <div class="square" id="c3"></div>
+
+                    </div>
+                </div>
         </div>
+
+        <br>
+
+        <div id="gameResult">no winner yet</div>
 
     </main>
 
