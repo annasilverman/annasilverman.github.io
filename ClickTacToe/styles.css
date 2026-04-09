@@ -20,7 +20,7 @@
     --gameboard: 50vh;
     --background: 95vw;
 
-    --currentPlayerFont: 1rem;
+    --currentPlayerFont: 1.5rem;
     --currentPlayerBackground: 15em; 
 }
 
@@ -45,11 +45,11 @@ color:#0F594C;
 }
 
 #gameResult{
-display: none;
-z-index: 1; 
+/*display: none;*/
 position: absolute;
-top: 45%;
-left: 43%;
+top:40%;
+left:23%;
+z-index: 1; 
 
 text-align: center;
 background-color: #EFDBDD;

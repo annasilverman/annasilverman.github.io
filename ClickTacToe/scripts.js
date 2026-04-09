@@ -20,24 +20,22 @@ let currentPlayer;
 function checkGameboard(checkA, checkB, checkC) {
   let resultValue = "d";
 
-  console.log("checking the rows of the gameboard= "  + resultValue);
-
   if (checkRow(checkA) != "d") resultValue = checkRow(checkA);
   else if (checkRow(checkB) != "d") resultValue = checkRow(checkB);
   else if (checkRow(checkC) != "d") resultValue = checkRow(checkC);
 
+  console.log("checking the rows of the gameboard= " + resultValue);
   //OOOOOOOOOOOOOO IM SO HYPED THIS WORKED
-  console.log("time to check the columns resultValue= " + resultValue);
 
   for (let i = 0; i < 3; i++) {
     if (checkArray(checkA[i], checkB[i], checkC[i]) != "d") resultValue = checkArray(checkA[i], checkB[i], checkC[i]);
   }
-
-  console.log("checking diagnols using checkArrayresultValue= " + resultValue);
+  console.log("checking the columns of the gameboard= " + resultValue);
 
   if (checkArray(checkA[0], checkB[1], checkC[2]) != "d") resultValue = checkArray(checkA[0], checkB[1], checkC[2]);
   if (checkArray(checkA[2], checkB[1], checkC[0]) != "d") resultValue = checkArray(checkA[2], checkB[1], checkC[0]);
 
+  console.log("checking diagnols using checkArrayresultValue= " + resultValue);
   console.log("all is checked, resultValue = " + resultValue);
 
   return resultValue;
@@ -54,7 +52,8 @@ function checkRow(row) { //uses the check row example from the video but in its 
 
     if (row[0] == "x") rowValue = "x";
 
-    else rowValue = "o";
+    else if (row[0] == "o") rowValue = "o";
+
   }
 
   return rowValue;
@@ -66,7 +65,7 @@ function checkArray(value1, value2, value3) { //modified version of the example 
 
     if (value1[0] == "x") result = "x";
 
-    else result = "o";
+    else if (value1[0] == "o") result = "o";
   }
 
   return result;
@@ -85,7 +84,7 @@ function clickSquare() {
     this.classList.add("clicked");
 
     // subtract 1 from each turn 
-    remainingTurns = remainingTurns--;
+    remainingTurns = remainingTurns - 1;
     console.log("Remaining turns: " + remainingTurns);
 
     // update array of rows with the player value
@@ -135,8 +134,8 @@ function clickSquare() {
     }
 
     //reveal game outcome
-    if (gameOver){
-      document.querySelector("#gameResult").style.display="block";
+    if (gameOver) {
+      document.querySelector("#gameResult").style.display = "block";
     }
 
     //switches x and o depending on which turn was last
@@ -162,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   //Updates current player dom to currentPlayer
-  let currentPlayer = document.querySelector("#currentPlayer span");
+  currentPlayer = document.querySelector("#currentPlayer span");
   currentPlayer.innerHTML = currentTurn;
 });
 
