@@ -45,7 +45,7 @@ color:#0F594C;
 }
 
 #gameResult{
-/*display: none;*/
+display: none;
 position: absolute;
 top:40%;
 left:23%;
