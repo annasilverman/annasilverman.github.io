@@ -21,8 +21,8 @@ body {
 
 main {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items:center;
 }
 
 h1 {
@@ -30,6 +30,14 @@ h1 {
     text-align: center;
     font-size: 4rem;
     color: #0f594c;
+}
+
+p{
+    font-family: "Limelight", sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    color: #0f594c;
+
 }
 
 .background {
@@ -87,6 +95,7 @@ h1 {
     width: var(--cardSize);
     height: var(--cardSize);
     perspective: 600px;
+    transition: opacity 1s;
 
 }
 
@@ -140,4 +149,24 @@ h1 {
     transform: rotateX(180deg);
 }
 
+.matched{
+    transition-delay: 1s;
+    opacity: 0;
+}
+
+#winning{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    left: center;
+
+    width: 5em;
+    height: 3em;
+    background-color:#EFDBDD;
+    font-family: "Limelight", sans-serif;
+    text-align: center;
+    font-size: 4rem;
+    color: #0f594c; 
+
+}
 /***********************************************/
