@@ -44,7 +44,7 @@ h1 {
 /*************************************************/
 
 /* Game Board set up******************************/
-.gameboard {
+#gameboard {
     position: relative;
     display: grid;
     align-items: center;
@@ -136,7 +136,7 @@ h1 {
     text-align: center;
 }
 
-.card:hover .cardContent {
+.card.clicked .cardContent {
     transform: rotateX(180deg);
 }
 
