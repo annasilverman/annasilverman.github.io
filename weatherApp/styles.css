@@ -1,0 +1,218 @@
+/* da fonts*****gotta be on brand always*****************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/**********************************************************************/
+*{
+    box-sizing:border-box;
+
+    --padding: .3rem;
+    --currentWeather: 50vh;
+    --compass: 10em;
+    --futureIcon: 15vh;
+    --border: 1em;
+    --paddingtop: 1.5em;
+
+    --locationSize: 2rem;
+    --CurrentTemp: 4rem;
+    --pSize: .8rem;
+    --windinfo: 1.2rem;
+    --futuretemp: 3rem;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color:#FCF2F4;
+    font-family: "Quattrocento Sans", sans-serif;
+
+}
+
+main{
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 33vw 33vw 33vw;
+    grid-template-rows: 10vh 30vh 30vh 25vh 20vh;
+    grid-template-areas:
+        'location  location  location'
+        'currentweathericon  currentweathericon  currentweatherinfo'
+        'windinfo  compass  compass'  /*this is so scary to me*/
+        'futureinfo  futureinfo  futureinfo'
+        'credit credit credit'; /*IM SO HAPPY I FIGURED IT OUT*/
+}
+ 
+p{
+    color:#218371;
+    font-size: var(--pSize);
+}
+
+a{
+    color:#218371;
+}
+
+a:hover{
+    color: #4D8C63;
+}
+
+#location{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-area: location;
+    font-family: "Limelight", sans-serif;
+    background-color:#FCF2F4;
+    color:#0F594C;
+    font-size: var(--locationSize);
+}
+
+
+.block{
+    background-color:#EFDBDD;
+    border: solid .3em #FCF2F4;
+    border-radius: 1em;
+}
+
+/* Section 1: current info*****************************************************/
+
+#currentweathericon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: currentweathericon;
+
+}
+
+#currentweathericon img{
+    width: var(--currentWeather);
+    height: var(--currentWeather);
+}
+
+#currentweatherinfo{
+    display: flex;
+    justify-content: center;
+    flex-direction:column; 
+
+    grid-area: currentweatherinfo;
+    text-align: center;
+    color: #218371;
+
+}
+
+#currentweatherinfo .currentTemp{
+    font-family: "Limelight", sans-serif; /*current no longer looks like a real word to me*/
+    font-size: var(--CurrentTemp);
+    color: #0F594C;
+
+}
+
+/* Section 2: Wind + Humidity*****************************************************/
+#windinfo{
+    padding: var(--padding);
+    grid-area: windinfo;
+    display: flex;
+    flex-direction:column; 
+    justify-content: center;
+
+}
+#windinfo div{
+    color:#0F594C;
+    font-family: "Limelight", sans-serif;
+    font-size: var(--windinfo);
+}
+
+#compass{
+    grid-area: compass;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+#compassimg{
+    width: var(--compass);
+    height: var(--compass);
+    transform: rotate(45deg); /*the goal is to make this rotate with the degrees of the wind*/
+}
+
+/* Section 3: Future info*****************************************************/
+#predictions{
+    display: flex; /*i feel like there is an easier way of adding flex direction but when i add it to main everything breaks*/
+    overflow: auto;
+    overflow-y:hidden; 
+
+    grid-area: futureinfo;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    /*NO SCROLL BARS on mobile at least*/
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+
+}
+.futureDay{
+    display: flex;
+    flex-direction:column; 
+    justify-content: flex-end;
+    align-items: center;
+
+    width:45%;
+    height:100%;
+    background-color: #EFDBDD;
+    padding: var(--padding);
+
+}
+.futureDay div{
+    color:#0F594C;
+}
+
+.futuretemp{
+    font-family: "Limelight", sans-serif;
+    font-size: var(--futuretemp);
+}
+
+
+#futureIcon{
+    padding-top: 2em;
+    width:var(--futureIcon);
+    height:var(--futureIcon);
+}
+
+#credit{
+    grid-area:credit;
+    display: flex;
+    flex-direction:column;
+
+    position: relative;
+    width:100%;
+    padding:.5em;
+}
+
+/* Section 3: responsive for desktop*****************************************************/
+@media only screen and (orientation: landscape){
+    *{
+        --compass: 20vh;
+        --futureIcon: 20vh;
+        --border: 3em;
+        --paddingtop: 1.5em;
+
+        /*font sizes*********************/
+         --locationSize: 4rem;
+        --CurrentTemp: 8rem;
+        --pSize: 1.5rem;
+        --windinfo: 2rem;
+        --futuretemp: 4rem;
+    }
+
+    main{
+        grid-template-rows: 10vh 30vh 30vh 29vh 15vh;
+    }
+
+
+}
