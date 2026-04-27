@@ -18,6 +18,7 @@
     --pSize: .8rem;
     --windinfo: 1.2rem;
     --futuretemp: 3rem;
+    --compassDegree: 45deg;
 }
 
 body{
@@ -137,7 +138,7 @@ a:hover{
 #compassimg{
     width: var(--compass);
     height: var(--compass);
-    transform: rotate(45deg); /*the goal is to make this rotate with the degrees of the wind*/
+    transform: rotate(var(--compassDegree)); /*the goal is to make this rotate with the degrees of the wind*/
 }
 
 /* Section 3: Future info*****************************************************/
