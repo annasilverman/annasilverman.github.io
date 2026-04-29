@@ -10,44 +10,74 @@
 </head>
 
 <body>
+    <div id="searchModalForm">
+        <form id="search">
+            <input type="text" id="titleSearch" placeholder="Title"> <br>
+            <input type="text" id="artistSearch" placeholder="Artist">
+            <input type="text" id="yearSearch" placeholder="Year"> <br>
+            <input type="text" id="deptTitleSearch" placeholder="departmentTitle">
+            <input type="number" id="searchID" placeholder="ID #">
+
+        </form>
+    </div>
+
     <nav>
-        <img src ="" alt="art institute of chicago">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Art_Institute_of_Chicago_logo.svg/1280px-Art_Institute_of_Chicago_logo.svg.png"
+            alt="art institute of chicago" id="navlogo">
         <div class="nav">
-            <div class = "navHeader"><h2>Art Institute of Chicago</h2></div>
-            <div class = "navBar">
-                <a href= "">Advanced Search</a>
-                <a href= "">Random</a>
-                <a href= "">Disclaimer</a>
+            <div class="navHeader">Art Institute of Chicago</div>
+            <div class="navBar">
+                <button type="submit" class="navButton">Advanced Search</button>
+                <button type="submit" class="navButton">Random</button>
+                <button type="submit" class="navButton">disclaimer</button>
             </div>
         </div>
     </nav>
     <header>
-        <div class= "search">
-            <img src="" alt="search">
-            <input type="text" id="aSInput" name="ArtSearchInput">
+        <div class="backgroundImg"></div>
+
+        <div class="searchblock">
+            <input type="text" id="aSearchInput" name="ArtSearchInput">
+            <div class="headerbuttons">
+                <button type="submit" class="mainButton">Random</button>
+                <button type="submit" class="mainButton">Advanced Search</button>
+            </div>
         </div>
-        <div class= "button">Random Art</div>
-        <div class= "button">Advanced Search</div>
+        </div>
     </header>
 
     <main>
         <div class="artCard">
-            <img src="" alt="">
-            <div>Artist Name</div>
-            <div>Art Peice</div>
-            <div>Date</div>
-            <div>Material</div>
-            <div>descritpion</div>
+            <div class="apiimg"><img src="https://www.artic.edu/iiif/2/6644829f-f292-c5c4-a73c-0356a6fdbf0d/full/843,/0/default.jpg" alt=""></div>
+            <div class="artistName">Artist Name</div>
+            <div class="artPeice">Art Peice</div>
+            <div class="date">Date</div>
+            <div class="description">description</div>
         </div>
 
         <div class="artCard">
-            <img src="" alt="">
-            <div>Artist Name</div>
-            <div>Art Peice</div>
-            <div>Date</div>
-            <div>Material</div>
-            <div>descritpion</div>
-        </div>        
+            <div class="apiimg"><img src="https://www.artic.edu/iiif/2/6644829f-f292-c5c4-a73c-0356a6fdbf0d/full/843,/0/default.jpg" alt=""></div>
+            <div class="artistName">Artist Name</div>
+            <div class="artPeice">Art Peice</div>
+            <div class="date">Date</div>
+            <div class="description">description</div>
+        </div>
+
+         <div class="artCard">
+            <div class="apiimg"><img src="https://www.artic.edu/iiif/2/6644829f-f292-c5c4-a73c-0356a6fdbf0d/full/843,/0/default.jpg" alt=""></div>
+            <div class="artistName">Artist Name</div>
+            <div class="artPeice">Art Peice</div>
+            <div class="date">Date</div>
+            <div class="description">description</div>
+        </div>
+
+        <div class="artCard">
+            <div class="apiimg"><img src="https://www.artic.edu/iiif/2/6644829f-f292-c5c4-a73c-0356a6fdbf0d/full/843,/0/default.jpg" alt=""></div>
+            <div class="artistName">Artist Name</div>
+            <div class="artPeice">Art Peice</div>
+            <div class="date">Date</div>
+            <div class="description">description</div>
+        </div>
     </main>
 
 </body>

@@ -1,3 +1,15 @@
+// weather API gloabal variables
+const weatherURL = 'https://weatherapi-com.p.rapidapi.com/forecast.json?days=3&q=';
+const weatherOptions = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': 'd6112b66c3mshba209df32ba0ae9p19b2f0jsnfef19801d0d0',
+		'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
+		'Content-Type': 'application/json'
+	}
+};
+
+
 let scrollingBox;
 let offsetLeftStart;
 let scrollLeftstart;
@@ -20,7 +32,8 @@ async function getData(url, options) {
 
 //update weather idsplay in DOM based on passed obejct
 function updateWeather(weatherObject) {
-    console.log(weatherObject);
+    //updates location
+    document.querySelector("#location").innerHTML = weatherObject.location.name;
     //updating curent temp img the api icons are ugly :(
     document.querySelector("#currentweathericon").innerHTML = "<img id='currentweatherimg' src='" + weatherObject.current.condition.icon + "'>";
     //updating currentTemp
@@ -52,14 +65,31 @@ function updateWeather(weatherObject) {
     }
 }
 
+
+
 //wait for DOM to load
 document.addEventListener("DOMContentLoaded", function () {
 
-    let sampleURL = "https://tordevries.github.io/477/examples/ajax-api-test/current-forecast.js";
-    let sampleOptions = {};
+//ipLookupdata
+let ipLookupURL = "https://api.ipify.org/?format=json";
+let ipLookupOptions = {};
 
-    //get sample data
-    getData(sampleURL, sampleOptions).then(function (result) {
-        updateWeather(result);
+//use ajax to fetch IP in JSON font 
+getData(ipLookupURL, ipLookupOptions).then(function(result){
+
+    //adds IP number to the weatherURL
+    let weatherLookupURL=weatherURL + result.ip;
+    console.log(weatherLookupURL)
+    //use IP number to lookup weather
+    getData(weatherLookupURL, weatherOptions).then(function(weatherResult){
+        console.log(weatherResult);
+        updateWeather(weatherResult);
+    });
+});
+
+    //make the location button show modal popups
+    document.querySelector("#findLocation").addEventListener(".click", function(){
+        document.body.classList.toggle("showModal");
+        console.log("clicked");
     });
 });

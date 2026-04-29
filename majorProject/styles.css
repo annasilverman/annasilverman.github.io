@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap');
+/**********Modal**************************************************************/
+#searchModalForm{
+display: none;
+}
+
+/**********Navigation**************************************************************/
+body{
+    background-color:#7E746D;
+}
+nav{
+    display:flex;
+    font-family: "Baskervville SC", serif;
+    color: #fff;
+}
+.nav{
+    width:100%
+}
+#navlogo{
+    width: 3em;
+    height: 3em;
+}
+.navHeader{
+    display: flex;
+    font-size: 1.5rem;
+    justify-content:center;
+
+}
+.navBar{
+    display: flex;
+    justify-content: space-around;
+}
+
+.navButton{
+    background: none;
+    border: none;
+    font-family: "Baskervville SC", serif;
+    color: #fff;
+
+}
+
+/**********Search**************************************************************/
+
+header{
+    border: 5px solid #7E746D;
+}
+.backgroundImg{
+    height: 70vh;
+    background-image: url(https://media.timeout.com/images/102850781/image.jpg);
+    background-position: center;
+    background-size: 200vw;
+    filter: blur(2px);    
+}
+.searchblock{
+    display:flex;
+    justify-content: center;
+}
+
+input[type=text]{
+    position: absolute;
+    top: 35vh;
+    width: 75vw;
+    right: 12.5%;
+}
+
+.headerbuttons{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 20px 10px;
+    position: absolute;
+    top: 40vh;
+
+}
+
+.mainButton{
+    font-family: "Baskervville SC", serif;
+    color: #fff;
+    background-color: #B50938;
+    padding:.3em;
+    border: 5px;
+    border-radius: 3px;
+}
+
+/**********Art**************************************************************/
+main{
+    padding-top: .5em;
+    display: grid;
+    grid-template-columns: 45vw 45vw;
+    gap: 1em;
+}
+
+.apiimg img{
+    width: 100%;
+}
+
+.artCard{
+    color:#fff;
+}
+
+.artistName{
+    font-size: 1.5rem;
+}
+.artPeice{
+    font-size: 1rem;
+}
+
+.date{
+    font-size:.8rem;
+}
+
+.description{
+    font-size: .7rem;
+}

@@ -7,18 +7,26 @@
     box-sizing:border-box;
 
     --padding: .3rem;
-    --currentWeather: 50vh;
+    --currentWeather: 15vh;
     --compass: 10em;
     --futureIcon: 15vh;
     --border: 1em;
     --paddingtop: 1.5em;
+    --modalForm: 5em;
 
     --locationSize: 2rem;
+
     --CurrentTemp: 4rem;
     --pSize: .8rem;
     --windinfo: 1.2rem;
-    --futuretemp: 3rem;
+    --futuretemp: 2rem;
     --compassDegree: 45deg;
+
+    --locationwidth: 7em;
+    --locationTopPadding: 10em;
+    --modelTopPlacement: 35em;
+    --modalLeftPlacement: 10vw;
+    --locationpaddingleft: 2em;
 }
 
 body{
@@ -29,6 +37,7 @@ body{
 
 }
 
+
 main{
 
     position: relative;
@@ -37,13 +46,15 @@ main{
 
     display: grid;
     grid-template-columns: 33vw 33vw 33vw;
-    grid-template-rows: 10vh 30vh 30vh 25vh 20vh;
+    grid-template-rows: 10vh 30vh 30vh 28vh 10vh 20vh;
     grid-template-areas:
-        'location  location  location'
-        'currentweathericon  currentweathericon  currentweatherinfo'
+        '.  location  .'
+        'currentweathericon  currentweatherinfo  currentweatherinfo'
         'windinfo  compass  compass'  /*this is so scary to me*/
         'futureinfo  futureinfo  futureinfo'
+        '. button . ' /*IM SO HAPPY I FIGURED IT OUT*/
         'credit credit credit'; /*IM SO HAPPY I FIGURED IT OUT*/
+
 }
  
 p{
@@ -70,7 +81,12 @@ a:hover{
     color:#0F594C;
     font-size: var(--locationSize);
 }
+#findLocation{
+    position: absolute;
+    z-index:10;
+    background-color:#D97E96;
 
+}
 
 .block{
     background-color:#EFDBDD;
@@ -128,7 +144,6 @@ a:hover{
 
 #compass{
     grid-area: compass;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,8 +209,72 @@ a:hover{
     width:100%;
     padding:.5em;
 }
+/* Section 3: Modalolal*****************************************************/
+    #modalCover{
+        position:fixed;
+        display:none;
+        top:0;
+        left:0;
+        width: 100vw;
+        height: 100vh;
+        background-color:rgba(252, 242, 244, 0.5); 
+        backdrop-filter: blur(2px);       
+        z-index:10;
+    }
 
-/* Section 3: responsive for desktop*****************************************************/
+    #modalForm{
+        position:fixed;
+        display:none;
+        top:10em;
+        left:var(--modalLeftPlacement);
+        width: 80vw;
+        height: 60vh;
+        text-align: center;
+        background-color:#EFDBDD; 
+        border: solid #EFDBDD;
+        border-radius: 1em;
+        color:#0F594C;
+        z-index:11;
+    }
+
+ body.showModal #modalCover,
+ body.showModal #modalForm{
+    display:block;
+   }
+
+    #locationForm{
+        padding:1em;
+        padding-top:var(--locationTopPadding);
+    }
+
+    input[type=text]{
+        background-color: #FCF2F4;
+        border: solid, 1px, #D97E96;
+        color:#D97E96;
+        border-radius: 10px;
+        width: 90%;
+        padding: 1em;
+    }
+
+    button[type=submit]{
+        padding:1em;
+        background-color:#D97E96;
+        border: solid, 1px, #D97E96;
+        border-radius: 10px;
+        color:#FCF2F4;
+    }
+
+    #findLocation{
+    grid-area: button;
+    background-color:#EFDBDD;
+    width: 100%;
+    height: 4em;
+    border: solid, 1px, #EFDBDD;
+    border-radius: 10px;
+   }
+
+
+/* Section 4: responsive for desktop*****************************************************/
 @media only screen and (orientation: landscape){
     *{
         --compass: 20vh;
@@ -203,12 +282,19 @@ a:hover{
         --border: 3em;
         --paddingtop: 1.5em;
 
+        /*form*********************/
+        --modalLeftPlacement: 10em;
+        --locationTopPadding: 15em;
+        --locationpaddingleft: 25vw;
+        --locationwidth: 10em;
+
         /*font sizes*********************/
-         --locationSize: 4rem;
+        --locationSize: 4rem;
         --CurrentTemp: 8rem;
         --pSize: 1.5rem;
         --windinfo: 2rem;
         --futuretemp: 4rem;
+    
     }
 
     main{
