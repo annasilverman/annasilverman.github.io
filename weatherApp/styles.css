@@ -2,9 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Limelight&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 /**********************************************************************/
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 
     --padding: .3rem;
     --currentWeather: 15vh;
@@ -29,16 +30,17 @@
     --locationpaddingleft: 2em;
 }
 
-body{
+body {
     padding: 0;
     margin: 0;
-    background-color:#FCF2F4;
+    background-color: #FCF2F4;
     font-family: "Quattrocento Sans", sans-serif;
+    z-index: 1;
 
 }
 
 
-main{
+main {
 
     position: relative;
     width: 100%;
@@ -50,53 +52,57 @@ main{
     grid-template-areas:
         '.  location  .'
         'currentweathericon  currentweatherinfo  currentweatherinfo'
-        'windinfo  compass  compass'  /*this is so scary to me*/
+        'windinfo  compass  compass'
+        /*this is so scary to me*/
         'futureinfo  futureinfo  futureinfo'
-        '. button . ' /*IM SO HAPPY I FIGURED IT OUT*/
-        'credit credit credit'; /*IM SO HAPPY I FIGURED IT OUT*/
+        '. button . '
+        /*IM SO HAPPY I FIGURED IT OUT*/
+        'credit credit credit';
+    /*IM SO HAPPY I FIGURED IT OUT*/
 
 }
- 
-p{
-    color:#218371;
+
+p {
+    color: #218371;
     font-size: var(--pSize);
 }
 
-a{
-    color:#218371;
+a {
+    color: #218371;
 }
 
-a:hover{
+a:hover {
     color: #4D8C63;
 }
 
-#location{
+#location {
     display: flex;
     align-items: center;
     justify-content: center;
 
     grid-area: location;
     font-family: "Limelight", sans-serif;
-    background-color:#FCF2F4;
-    color:#0F594C;
+    background-color: #FCF2F4;
+    color: #0F594C;
     font-size: var(--locationSize);
 }
-#findLocation{
+
+#findLocation {
     position: absolute;
-    z-index:10;
-    background-color:#D97E96;
+    z-index: 10;
+    background-color: #D97E96;
 
 }
 
-.block{
-    background-color:#EFDBDD;
+.block {
+    background-color: #EFDBDD;
     border: solid .3em #FCF2F4;
     border-radius: 1em;
 }
 
 /* Section 1: current info*****************************************************/
 
-#currentweathericon{
+#currentweathericon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,15 +110,15 @@ a:hover{
 
 }
 
-#currentweathericon img{
+#currentweathericon img {
     width: var(--currentWeather);
     height: var(--currentWeather);
 }
 
-#currentweatherinfo{
+#currentweatherinfo {
     display: flex;
     justify-content: center;
-    flex-direction:column; 
+    flex-direction: column;
 
     grid-area: currentweatherinfo;
     text-align: center;
@@ -120,47 +126,51 @@ a:hover{
 
 }
 
-#currentweatherinfo .currentTemp{
-    font-family: "Limelight", sans-serif; /*current no longer looks like a real word to me*/
+#currentweatherinfo .currentTemp {
+    font-family: "Limelight", sans-serif;
+    /*current no longer looks like a real word to me*/
     font-size: var(--CurrentTemp);
     color: #0F594C;
 
 }
 
 /* Section 2: Wind + Humidity*****************************************************/
-#windinfo{
+#windinfo {
     padding: var(--padding);
     grid-area: windinfo;
     display: flex;
-    flex-direction:column; 
+    flex-direction: column;
     justify-content: center;
 
 }
-#windinfo div{
-    color:#0F594C;
+
+#windinfo div {
+    color: #0F594C;
     font-family: "Limelight", sans-serif;
     font-size: var(--windinfo);
 }
 
-#compass{
+#compass {
     grid-area: compass;
     display: flex;
     align-items: center;
     justify-content: center;
- 
+
 }
 
-#compassimg{
+#compassimg {
     width: var(--compass);
     height: var(--compass);
-    transform: rotate(var(--compassDegree)); /*the goal is to make this rotate with the degrees of the wind*/
+    transform: rotate(var(--compassDegree));
+    /*the goal is to make this rotate with the degrees of the wind*/
 }
 
 /* Section 3: Future info*****************************************************/
-#predictions{
-    display: flex; /*i feel like there is an easier way of adding flex direction but when i add it to main everything breaks*/
+#predictions {
+    display: flex;
+    /*i feel like there is an easier way of adding flex direction but when i add it to main everything breaks*/
     overflow: auto;
-    overflow-y:hidden; 
+    overflow-y: hidden;
 
     grid-area: futureinfo;
     position: absolute;
@@ -169,114 +179,117 @@ a:hover{
 
     /*NO SCROLL BARS on mobile at least*/
     scrollbar-width: none;
-    -ms-overflow-style: none; 
+    -ms-overflow-style: none;
 
 }
-.futureDay{
+
+.futureDay {
     display: flex;
-    flex-direction:column; 
+    flex-direction: column;
     justify-content: flex-end;
     align-items: center;
 
-    width:45%;
-    height:100%;
+    width: 45%;
+    height: 100%;
     background-color: #EFDBDD;
     padding: var(--padding);
 
 }
-.futureDay div{
-    color:#0F594C;
+
+.futureDay div {
+    color: #0F594C;
 }
 
-.futuretemp{
+.futuretemp {
     font-family: "Limelight", sans-serif;
     font-size: var(--futuretemp);
 }
 
 
-#futureIcon{
+#futureIcon {
     padding-top: 2em;
-    width:var(--futureIcon);
-    height:var(--futureIcon);
+    width: var(--futureIcon);
+    height: var(--futureIcon);
 }
 
-#credit{
-    grid-area:credit;
+#credit {
+    grid-area: credit;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 
     position: relative;
-    width:100%;
-    padding:.5em;
-}
-/* Section 3: Modalolal*****************************************************/
-    #modalCover{
-        position:fixed;
-        display:none;
-        top:0;
-        left:0;
-        width: 100vw;
-        height: 100vh;
-        background-color:rgba(252, 242, 244, 0.5); 
-        backdrop-filter: blur(2px);       
-        z-index:10;
-    }
-
-    #modalForm{
-        position:fixed;
-        display:none;
-        top:10em;
-        left:var(--modalLeftPlacement);
-        width: 80vw;
-        height: 60vh;
-        text-align: center;
-        background-color:#EFDBDD; 
-        border: solid #EFDBDD;
-        border-radius: 1em;
-        color:#0F594C;
-        z-index:11;
-    }
-
- body.showModal #modalCover,
- body.showModal #modalForm{
-    display:block;
-   }
-
-    #locationForm{
-        padding:1em;
-        padding-top:var(--locationTopPadding);
-    }
-
-    input[type=text]{
-        background-color: #FCF2F4;
-        border: solid, 1px, #D97E96;
-        color:#D97E96;
-        border-radius: 10px;
-        width: 90%;
-        padding: 1em;
-    }
-
-    button[type=submit]{
-        padding:1em;
-        background-color:#D97E96;
-        border: solid, 1px, #D97E96;
-        border-radius: 10px;
-        color:#FCF2F4;
-    }
-
-    #findLocation{
-    grid-area: button;
-    background-color:#EFDBDD;
     width: 100%;
-    height: 4em;
+    padding: .5em;
+}
+
+/* Section 3: Modalolal*****************************************************/
+#modalCover {
+    position: fixed;
+    /*   display:none; */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(252, 242, 244, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 10;
+}
+
+#modalForm {
+    position: fixed;
+    /*   display:none; */
+    top: 10em;
+    left: var(--modalLeftPlacement);
+    width: 80vw;
+    height: 60vh;
+    text-align: center;
+    background-color: #EFDBDD;
+    border: solid #EFDBDD;
+    border-radius: 1em;
+    color: #0F594C;
+    z-index: 11;
+}
+
+body.showModal #modalCover,
+body.showModal #modalForm {
+    display: block;
+}
+
+#locationForm {
+    padding: 1em;
+    padding-top: var(--locationTopPadding);
+}
+
+input[type=text] {
+    background-color: #FCF2F4;
+    border: solid, 1px, #D97E96;
+    color: #D97E96;
+    border-radius: 10px;
+    width: 90%;
+    padding: 1em;
+}
+
+button[type=submit] {
+    padding: 1em;
+    background-color: #D97E96;
+    border: solid, 1px, #D97E96;
+    border-radius: 10px;
+    color: #FCF2F4;
+}
+
+ #findLocation {
+    position: absolute;
+    background-color: #D97E96;
+    width: 4em;
+    height: 3em;
     border: solid, 1px, #EFDBDD;
     border-radius: 10px;
-   }
+}
 
 
 /* Section 4: responsive for desktop*****************************************************/
-@media only screen and (orientation: landscape){
-    *{
+@media only screen and (orientation: landscape) {
+    * {
         --compass: 20vh;
         --futureIcon: 20vh;
         --border: 3em;
@@ -294,10 +307,10 @@ a:hover{
         --pSize: 1.5rem;
         --windinfo: 2rem;
         --futuretemp: 4rem;
-    
+
     }
 
-    main{
+    main {
         grid-template-rows: 10vh 30vh 30vh 29vh 15vh;
     }
 

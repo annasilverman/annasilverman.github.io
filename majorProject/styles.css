@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap');
 /**********Modal**************************************************************/
+*{
+    box-sizing:border-box;
+    --navLogoSize: 3em;
+    
+}
+
 #searchModalForm{
 display: none;
 }
@@ -56,12 +62,12 @@ header{
     justify-content: center;
 }
 
-input[type=text]{
+/*input[type=text]{
     position: absolute;
     top: 35vh;
     width: 75vw;
     right: 12.5%;
-}
+}*/
 
 .headerbuttons{
     display:flex;
