@@ -28,7 +28,10 @@
     --modelTopPlacement: 35em;
     --modalLeftPlacement: 10vw;
     --locationpaddingleft: 2em;
-}
+    --fontsizebutton: .5rem;
+    --buttonwidth: 10em;
+    --buttonheight: 3em;
+    }
 
 body {
     padding: 0;
@@ -49,7 +52,7 @@ main {
     grid-template-columns: 33vw 33vw 33vw;
     grid-template-rows: 10vh 30vh 30vh 28vh 10vh 20vh;
     grid-template-areas:
-        '.  location  .'
+        'location  location  location'
         'currentweathericon  currentweatherinfo  currentweatherinfo'
         'windinfo  compass  compass'
         /*this is so scary to me*/
@@ -273,9 +276,9 @@ button[type=submit] {
     position: absolute;
     background-color: #D97E96;
     color:#FCF2F4;
-    font-size: 8px;
-    width: 5em;
-    height: 3em;
+    font-size: var(--fontsizebutton);
+    width: var(--buttonwidth);
+    height: var(--buttonheight);
     border: solid, 1px, #EFDBDD;
     border-radius: 10px;
     z-index: 999;
@@ -302,6 +305,9 @@ button[type=submit] {
         --pSize: 1.5rem;
         --windinfo: 2rem;
         --futuretemp: 4rem;
+        --fontsizebutton: 1rem;
+        --buttonwidth: 10em;
+        --buttonheight: 3em;
 
     }
 
