@@ -35,7 +35,6 @@ body {
     margin: 0;
     background-color: #FCF2F4;
     font-family: "Quattrocento Sans", sans-serif;
-    z-index: 1;
 
 }
 
@@ -85,13 +84,6 @@ a:hover {
     background-color: #FCF2F4;
     color: #0F594C;
     font-size: var(--locationSize);
-}
-
-#findLocation {
-    position: absolute;
-    z-index: 10;
-    background-color: #D97E96;
-
 }
 
 .block {
@@ -225,7 +217,7 @@ a:hover {
 /* Section 3: Modalolal*****************************************************/
 #modalCover {
     position: fixed;
-    /*   display:none; */
+    display:none;
     top: 0;
     left: 0;
     width: 100vw;
@@ -237,7 +229,7 @@ a:hover {
 
 #modalForm {
     position: fixed;
-    /*   display:none; */
+    display:none;
     top: 10em;
     left: var(--modalLeftPlacement);
     width: 80vw;
@@ -280,10 +272,13 @@ button[type=submit] {
  #findLocation {
     position: absolute;
     background-color: #D97E96;
-    width: 4em;
+    color:#FCF2F4;
+    font-size: 8px;
+    width: 5em;
     height: 3em;
     border: solid, 1px, #EFDBDD;
     border-radius: 10px;
+    z-index: 999;
 }
 
 

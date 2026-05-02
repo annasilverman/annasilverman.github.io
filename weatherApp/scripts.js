@@ -9,7 +9,6 @@ const weatherOptions = {
 	}
 };
 
-
 let scrollingBox;
 let offsetLeftStart;
 let scrollLeftstart;
@@ -88,8 +87,25 @@ getData(ipLookupURL, ipLookupOptions).then(function(result){
 });
 
     //make the location button show modal popups
-    document.querySelector("#findLocation").addEventListener(".click", function(){
+    document.querySelector("#findLocation").addEventListener("click", function(){
         document.body.classList.toggle("showModal");
         console.log("clicked");
+    });
+
+    document.querySelector("#locationForm").addEventListener("submit", function (event) {
+
+        //stop form from submitting to server
+        event.preventDefault();
+        document.body.classList.toggle("showModal");
+        let newLocation = document.querySelector("#locationBox").value;
+
+        //adds passed value to the weatherURL
+        let weatherLookupURL = weatherURL + newLocation;
+        console.log(weatherLookupURL)
+        //use IP number to lookup weather
+        getData(weatherLookupURL, weatherOptions).then(function (weatherResult) {
+            console.log(weatherResult);
+            updateWeather(weatherResult);
+        });
     });
 });
