@@ -10,14 +10,22 @@
 </head>
 
 <body>
-    <div id="searchModalForm">
+    
+    <div id="modalCover"> </div>
+    <div id="searchModal"> 
+    <button type="submit" class="advancedsearchexit">X</button>
+        <h1>Avanced search</h1>
         <form id="search">
-            <input type="text" id="titleSearch" placeholder="Title"> <br>
-            <input type="text" id="artistSearch" placeholder="Artist">
-            <input type="text" id="yearSearch" placeholder="Year"> <br>
-            <input type="text" id="deptTitleSearch" placeholder="departmentTitle">
-            <input type="number" id="searchID" placeholder="ID #">
-
+            <h2>Title</h2>
+            <input class="modalform" type="text" id="titleSearch" placeholder="Title"> <br>
+            <h2>Artist</h2>
+            <input class="modalform" type="text" id="artistSearch" placeholder="Artist">
+            <h2>Date</h2>
+            <input class="modalform" type="text" id="yearSearch" placeholder="Year"> <br>
+            <h2>maybe</h2>
+            <input class="modalform" type="text" id="deptTitleSearch" placeholder="departmentTitle">
+            <h2>ID</h2>
+            <input class="modalform" type="number" id="searchID" placeholder="ID #">
         </form>
     </div>
 
@@ -29,7 +37,7 @@
         <div class="nav">
             <div class="navHeader">Art Institute of Chicago</div>
             <div class="navBar">
-                <button type="submit" class="navButton">Advanced Search</button>
+                <button type="submit" id="advancedSeach" class="navButton">Advanced Search</button>
                 <button type="submit" class="navButton">Random</button>
                 <button type="submit" class="navButton">disclaimer</button>
             </div>
@@ -39,6 +47,7 @@
         <div class="backgroundImg"></div>
 
         <div class="searchblock">
+            <input type="text" class="searchMain">
             <div class="headerbuttons">
                 <button type="submit" class="mainButton">Random</button>
                 <button type="submit" class="mainButton">Advanced Search</button>
@@ -48,6 +57,7 @@
     </header>
 
     <main>
+        <div class="artResults">
         <div class="artCard">
             <div class="apiimg"><img src="https://www.artic.edu/iiif/2/6644829f-f292-c5c4-a73c-0356a6fdbf0d/full/843,/0/default.jpg" alt=""></div>
             <div class="artistName">Artist Name</div>
@@ -79,6 +89,7 @@
             <div class="date">Date</div>
             <div class="description">description</div>
         </div>
+    </div>
     </main>
 
 </body>

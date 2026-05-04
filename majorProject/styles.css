@@ -2,7 +2,24 @@
 /**********Modal**************************************************************/
 *{
     box-sizing:border-box;
+    /****nav***************/
     --navLogoSize: 3em;
+
+    /****Main Search***************/
+    --buttonHeight: 2em;
+    --buttonWidth: 10em;
+    --mainButtonFont: .7rem;
+    --headerSize: 1.5rem;
+
+    /**** Art information***************/
+    --artistName: 1.5rem;
+    --artPeice: 1rem;
+    --date: .5rem;
+    --description:.7rem;
+    --formfontsize: 1rem;
+
+    /**** Art information***************/
+    --inputwidth: 75vw;
     
 }
 
@@ -18,17 +35,18 @@ nav{
     display:flex;
     font-family: "Baskervville SC", serif;
     color: #fff;
+    width:100%
 }
 .nav{
     width:100%
 }
 #navlogo{
-    width: 3em;
-    height: 3em;
+    width: var(--navLogoSize);
+    height: var(--navLogoSize);
 }
 .navHeader{
     display: flex;
-    font-size: 1.5rem;
+    font-size: var(--headerSize);
     justify-content:center;
 
 }
@@ -41,8 +59,65 @@ nav{
     background: none;
     border: none;
     font-family: "Baskervville SC", serif;
+    font-size: var(--navbuttonsize);
     color: #fff;
 
+}
+/**********Modal**************************************************************/
+#modalCover{
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    z-index:99;
+    
+}
+
+#searchModal{
+    display: none;
+    position: fixed;
+    top: 10%;
+    left:10%;
+    width: 80%;
+    height: 80%;
+    background-color: #C4C4C4;
+    z-index: 100;
+    flex-direction: column;
+    align-items:center;
+}
+
+body.showModal #modalCover,
+body.showModal #searchModal{
+    display:flex;
+}
+.modalform{
+    font-family: "Baskervville SC", serif;
+    color: #7E746D;
+    font-size: var(--formfontsize);
+    width: var(--inputwidth);
+}
+
+.advancedsearchexit{
+    position: absolute;
+    left: 93%;
+    background: none;
+    border: none;
+    font-family: "Baskervville SC", serif;
+    color: #7E746D;
+}
+
+h1{
+    font-family: "Baskervville SC", serif;
+    color: #7E746D;
+    font-size: var(--headerSize);
+}
+h2{
+    font-family: "Baskervville SC", serif;
+    color: #7E746D;
+    font-size: var(--headerSize);
+    line-height: .1em;
 }
 
 /**********Search**************************************************************/
@@ -62,12 +137,12 @@ header{
     justify-content: center;
 }
 
-/*input[type=text]{
+.searchMain{
     position: absolute;
-    top: 35vh;
+    top: 35%;
     width: 75vw;
     right: 12.5%;
-}*/
+}
 
 .headerbuttons{
     display:flex;
@@ -75,7 +150,12 @@ header{
     gap: 20px 10px;
     position: absolute;
     top: 40vh;
+}
 
+.mainButton{
+    height: var(--buttonHeight);
+    width: var(--buttonWidth);
+    font-size:var(--mainButtonFont);
 }
 
 .mainButton{
@@ -89,10 +169,16 @@ header{
 
 /**********Art**************************************************************/
 main{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    z-index:1;
+}
+.artResults{
     padding-top: .5em;
     display: grid;
     grid-template-columns: 45vw 45vw;
-    gap: 1em;
+    gap: 3vw;
 }
 
 .apiimg img{
@@ -104,16 +190,61 @@ main{
 }
 
 .artistName{
-    font-size: 1.5rem;
+    font-size: var(--artistName);
 }
 .artPeice{
-    font-size: 1rem;
+    font-size: var(--artPeice);
 }
 
 .date{
-    font-size:.8rem;
+    font-size:var(--date);
 }
 
 .description{
-    font-size: .7rem;
+    font-size: var(--description);
+}
+
+@media only screen and (orientation: landscape) {
+*{
+    /****nav***************/
+    --navLogoSize: 5em;
+    --headerSize: 2.5rem;
+    --navbuttonsize: 1.5rem;
+
+    /****Main Search***************/
+    --buttonHeight: 3em;
+    --buttonWidth: 15em;
+    --mainButtonFont: 1rem;
+
+    /**** Art information***************/
+    --artistName: 1.5rem;
+    --artPeice: 1rem;
+    --date: .5rem;
+    --description:.7rem;
+    --formfontsize: 1rem;
+
+    /**** Art information***************/
+    --inputwidth: 75vw;
+    
+}
+.advancedsearchexit{
+    left: 97%;
+    font-size:2rem;
+}    
+
+
+input[type=text]{
+    height: 2em;
+    font-size: 1.5rem;
+}
+
+.artResults{
+    display: grid;
+    grid-template-columns: 23vw 23vw 23vw 23vw;
+    gap: 2vw;
+}
+
+h2{
+    font-size: 1.5rem;
+}
 }
