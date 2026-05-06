@@ -1,5 +1,6 @@
 //im scared
-const url = "https://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_display,main_reference_number";
+const url = "https://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_display,main_reference_number,image_id";
+let random = document.querySelector('.randomart');
 
 async function getData(url) {
     try {
@@ -15,24 +16,34 @@ async function getData(url) {
     }
 }
 
+function randpiece(randomNumber){
+    let randomArtNum = Math.floor(Math.random() * randomNumber.data.length);
+    console.log(randomArtNum);
+    return randomArtNum;
+}
 //function to display random art from api
 function randomArt(artObject){
-    console.log(artObject);
-    let randomArtNum = Math.floor(Math.random() * artObject.data.length);
-    console.log(newart);
-    var newart = artObject[randomArtNum];
+  let randomArtNum = randpiece(artObject);
 
 //using the varaibles to change the artist information in the randomArt div
-    let randomArt = document.querySelector(".title");
-    let randartistName = randomArt.querySelector(".artistName");
-    let randartPeice = randomArt.querySelector(".artPeice");
-    let randdate = randomArt.querySelector(".date");
-    let randdescription = randomArt.querySelector(".description");
+    let randartistName = random.querySelector('.artistName');
+    let randartPeice = random.querySelector('.artPeice');
+    let randdate = random.querySelector('.date');
+    let randdescription = random.querySelector('.description');
+    let randimg = random.querySelector('.apiimg');
 
-//cahnging the information in the randomart div in the dom
-    
- 
+//changing the information in the randomart div in the dom
+    randartistName.innerHTML = artObject.data[randomArtNum].title;
+    randartPeice.innerHTML = artObject.data[randomArtNum].artist_display;
+    randdate.innerHTML = artObject.data[randomArtNum].date_display;
+    randdescription.innerHTML = artObject.data[randomArtNum].id;
+    randimg.innerHTML = "<img class='imgsize' src='https://www.artic.edu/iiif/2/"+ artObject.data[randomArtNum].image_id +"/full/843,/0/default.jpg'>";
+
+
+    //big shoutout to this video for unerstanding the link and with the random art: https://www.youtube.com/watch?v=L8bCI0_u3As
 }
+
+
 //when the DOM loads and my sanity is gone
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -65,7 +76,14 @@ document.addEventListener("DOMContentLoaded", function () {
     getData(url).then(function (result){
         console.log(result);  //I NEED YOU TO KNOW I DID THIS MY FIRST TRY
         randomArt(result);
+
+        //changing random art with the button 
+        document.querySelector(".mainButton").addEventListener("click", function() {
+            randomArt(result);
+        });
     });
+
+ 
 
 
 

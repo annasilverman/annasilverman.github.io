@@ -20,6 +20,8 @@
 
     /**** Art information***************/
     --inputwidth: 75vw;
+    --randomartimg: 20em;
+    --randomartexitplacement: 90%;
     
 }
 
@@ -142,9 +144,13 @@ body.showartModal #randomArtModal{
     justify-content: center;
 }
 
+.randomart{
+    padding:1em;
+}
+
 .randartexit{
     position: absolute;
-    left: 97%;
+    left: var(--randomartexitplacement);
     font-size: 2rem;
     top: .5vw;
     background: none;
@@ -153,6 +159,11 @@ body.showartModal #randomArtModal{
     color: #7E746D;
 }
 
+.apiimg img{
+    max-height: var(--randomartimg);
+    max-width: auto;
+    object-fit: contain;
+}
 
 /**********Search**************************************************************/
 
@@ -259,6 +270,10 @@ main{
 
     /**** Art information***************/
     --inputwidth: 75vw;
+    --randomartimg: 40em;
+    --randomartexitplacement: 97%;
+
+
     
 }
 .advancedsearchexit{
