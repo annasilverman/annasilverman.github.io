@@ -63,7 +63,7 @@ nav{
     color: #fff;
 
 }
-/**********Modal**************************************************************/
+/**********Avanced Search Modal**************************************************************/
 #modalCover{
     display: none;
     position: fixed;
@@ -88,8 +88,7 @@ nav{
     align-items:center;
 }
 
-body.showModal #modalCover,
-body.showModal #searchModal{
+body.showsearchModal #searchModal{
     display:flex;
 }
 .modalform{
@@ -102,11 +101,13 @@ body.showModal #searchModal{
 .advancedsearchexit{
     position: absolute;
     left: 93%;
+    top: .5vw;
     background: none;
     border: none;
     font-family: "Baskervville SC", serif;
     color: #7E746D;
 }
+
 
 h1{
     font-family: "Baskervville SC", serif;
@@ -119,6 +120,39 @@ h2{
     font-size: var(--headerSize);
     line-height: .1em;
 }
+
+/**********Random Art Modal**************************************************************/
+
+
+body.showartModal #randomArtModal{
+    display:flex;
+}
+
+#randomArtModal{
+    display: none;
+    position: fixed;
+    top: 10%;
+    left:10%;
+    width: 80%;
+    height: 80%;
+    background-color: #C4C4C4;
+    z-index: 100;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+
+.randartexit{
+    position: absolute;
+    left: 97%;
+    font-size: 2rem;
+    top: .5vw;
+    background: none;
+    border: none;
+    font-family: "Baskervville SC", serif;
+    color: #7E746D;
+}
+
 
 /**********Search**************************************************************/
 

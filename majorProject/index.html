@@ -11,7 +11,6 @@
 
 <body>
     
-    <div id="modalCover"> </div>
     <div id="searchModal"> 
     <button type="submit" class="advancedsearchexit">X</button>
         <h1>Avanced search</h1>
@@ -29,7 +28,18 @@
         </form>
     </div>
 
-    
+    <div id="randomArtModal">
+        <button type="submit" class="randartexit">X</button>
+        <div class="randomart">
+            <div class="apiimg"><img src="https://www.artic.edu/iiif/2/6644829f-f292-c5c4-a73c-0356a6fdbf0d/full/843,/0/default.jpg" alt=""></div>
+            <div class="artistName">Artist Name</div>
+            <div class="artPeice">Art Peice</div>
+            <div class="date">Date</div>
+            <div class="description">description</div>
+            </div>
+            <button type="submit" class="mainButton">New Art</button>
+        </div>
+
 
     <nav>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Art_Institute_of_Chicago_logo.svg/1280px-Art_Institute_of_Chicago_logo.svg.png"
@@ -38,7 +48,7 @@
             <div class="navHeader">Art Institute of Chicago</div>
             <div class="navBar">
                 <button type="submit" id="advancedSeach" class="navButton">Advanced Search</button>
-                <button type="submit" class="navButton">Random</button>
+                <button type="submit" id="randArt"class="navButton">Random</button>
                 <button type="submit" class="navButton">disclaimer</button>
             </div>
         </div>
