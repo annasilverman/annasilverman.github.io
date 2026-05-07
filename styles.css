@@ -12,7 +12,11 @@ header {
     background-color: #0F594C;
     box-shadow: 0 0 1em #0F594C;
 }
-
+main{
+    display:flex;
+    gap:1em;
+    margin: .5em;
+}
 body{
     background-color: #FCF2F4;
 }
@@ -30,13 +34,11 @@ h2 {
     color: #218371;
 }
 
-
-div{
-    width: 30%;
-    height: 100%;
-    float: left;
+h3 {
+    font-family: "Limelight", sans-serif;
+    font-size: 1.5rem;
+    color: #218371;
 }
-
 a{
     padding: .5em;
     border: solid 1px #4D8C63;
@@ -53,17 +55,27 @@ p{
     color: #0F594C ;
 }
 
+section{
+    transition: transform 1s, ease, box-shadow 1s ease;
+
+}
+section:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
 /*Coursework div ****************************************************************************/
 
 .coursework section{
     background-color:#EFDBDD;
-    height: 149vh;
-    border: solid 1em #FCF2F4;
     border-radius: 2em;
     display: flex;
     flex-direction:column; /*this line took so long to find*/
     align-items: center;
-    line-height: 10%;
+    width: 30vw;
+    height: 90vh;
+    overflow:auto;
+    scrollbar-width: none;
 }
 
 .coursework section ul {
@@ -85,29 +97,32 @@ p{
 
 /*Questions div ****************************************************************************/
 
-.quesitons{ 
-    width: 70%;
-    height: 100%;
+.quesitonsgrid{ 
     background-color:#FCF2F4;
+    display:grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 33vw 33vw;
+    gap: 1em;
 }
 
+
+
 .quesitons section{
-    float: left;
     text-align: center;
-    width: 50%;
-    height: 30%;
     padding: 1em;
-    border: solid 1em #FCF2F4;
+    border: 1em;
     border-radius: 2em;
     background-color:#EFDBDD;
+    width: 33vw;
+    height: 20vw;
 }
 
 .quesitons a{
     font-size: 1em;
 }
 
-div #coolpic{
-    width: 100%;
+ #coolPic{
+    width: 66vw;
     height: 90vh;
 
 }
