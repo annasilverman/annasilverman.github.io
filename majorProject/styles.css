@@ -12,10 +12,11 @@
     --headerSize: 1.5rem;
 
     /**** Art information***************/
-    --artistName: 1.5rem;
+    --artistName: .7rem;
+    --apiimg: 45vw;
     --artPeice: 1rem;
-    --date: .5rem;
-    --description:.7rem;
+    --date: .7rem;
+    --description:.5rem;
     --formfontsize: 1rem;
 
     /**** Art information***************/
@@ -224,10 +225,12 @@ main{
     display: grid;
     grid-template-columns: 45vw 45vw;
     gap: 3vw;
+    font-family: "Baskervville SC", serif;
 }
 
-.apiimg img{
-    width: 100%;
+
+.apiimg{
+    width: var(--apiimg);
 }
 
 .artCard{
@@ -262,10 +265,11 @@ main{
     --mainButtonFont: 1rem;
 
     /**** Art information***************/
-    --artistName: 1.5rem;
-    --artPeice: 1rem;
-    --date: .5rem;
-    --description:.7rem;
+    --artistName: 1.7rem;
+    --apiimg: 23vw;
+    --artPeice: 2rem;
+    --date: 1.7rem;
+    --description:1.5rem;
     --formfontsize: 1rem;
 
     /**** Art information***************/
