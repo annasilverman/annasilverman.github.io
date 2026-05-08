@@ -104,7 +104,7 @@ let page =1;
 async function searchArtist(){
     keyword = searchbox.value.trim();
     //grabbing the data to put into another 
-    let searchUrl = `https://api.artic.edu/api/v1/artworks/search?q=${(keyword)}`;
+    let searchUrl = `https://api.artic.edu/api/v1/artworks/search?q=${(keyword)}&limit=20`;
     let searchResults = await getData(searchUrl);
 
     //catches if no results
@@ -114,7 +114,7 @@ async function searchArtist(){
     }
 
     console.log(` ${searchResults.data.length}`);
-    
+
     let fullResults =  [];
 
     for(let artwork of searchResults.data){
@@ -125,6 +125,8 @@ async function searchArtist(){
             fullResults.push(fullDetails.data)
         }
     }
+
+    console.log({data:fullResults});
 
     createcards({data:fullResults});
    /* getData(url).then(function (result){
@@ -138,7 +140,7 @@ async function searchArtist(){
 //when the DOM loads and my sanity is gone
 document.addEventListener("DOMContentLoaded", function () {
 
-    //toggles advanced search on
+    /*toggles advanced search on
     document.querySelector("#advancedSeach").addEventListener("click", function(){
         document.body.classList.toggle("showsearchModal");
         console.log("clicked");
@@ -149,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.toggle("showsearchModal");
         console.log("clicked");
     });
-
+*/
     //toggles random art on
     document.querySelector("#randArt").addEventListener("click", function(){
         document.body.classList.toggle("showartModal");
