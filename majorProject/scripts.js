@@ -4,6 +4,7 @@
 //this will be the first url to start and then will change with the seach function SEACH
 let url = "https://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_display,main_reference_number,image_id&limit=20";
 let random = document.querySelector('.randomart');
+let artResults = document.querySelector(".artResults");
 
 //you already know who it is
 async function getData(url) {
@@ -51,7 +52,6 @@ function randomArt(artObject){
 //sets up cards in html
 function createcards(artObject){
    let results = artObject.data;
-   let artResults = document.querySelector(".artResults");
    artResults.innerHTML = ""; //clears the cards beforehand
 
    //this makes the things display
@@ -100,15 +100,39 @@ let searchbox = document.querySelector('.searchMain');
 let searchblock = document.querySelector('.searchblock');
 let keyword="";
 let page =1;
+//searchs using a keyword
+async function searchArtist(){
+    keyword = searchbox.value.trim();
+    //grabbing the data to put into another 
+    let searchUrl = `https://api.artic.edu/api/v1/artworks/search?q=${(keyword)}`;
+    let searchResults = await getData(searchUrl);
 
-function searchArtist(){
-    keyword = searchbox.value;
-    let url = `https://api.artic.edu/api/v1/artworks/search?q=${(keyword)}`;
+    //catches if no results
+    if(!searchResults || searchResults.data === 0){
+        artResults.innerHTML = '<div class="no results"> No results found :(</div>'
+        return;
+    }
 
-    getData(url).then(function (result){
+    console.log(` ${searchResults.data.length}`);
+    
+    let fullResults =  [];
+
+    for(let artwork of searchResults.data){
+        let detailURL = `https://api.artic.edu/api/v1/artworks/${artwork.id}`
+        let fullDetails = await getData(detailURL);
+
+        if(fullDetails && fullDetails.data) {
+            fullResults.push(fullDetails.data)
+        }
+    }
+
+    createcards({data:fullResults});
+   /* getData(url).then(function (result){
     console.log(result);
     createcards(result);
     }); 
+*/
+    
 }
 
 //when the DOM loads and my sanity is gone
@@ -156,8 +180,6 @@ document.addEventListener("DOMContentLoaded", function () {
         searchArtist();
         console.log("pressed enter");
     });
-
-
 
 });
 
