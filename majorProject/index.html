@@ -31,13 +31,13 @@
     <div id="randomArtModal">
         <button type="submit" class="randartexit">X</button>
         <div class="randomart">
-            <div class="apiimg"></div>
+            <div class="randimg"></div>
             <div class="artistName">Artist Name</div>
             <div class="artPeice">Art Peice</div>
             <div class="date">Date</div>
             <div class="description">description</div>
             </div>
-            <button type="submit" class="mainButton">New Art</button>
+            <button type="submit" id="randartgen" class="mainButton">New Art</button>
         </div>
 
 
@@ -56,16 +56,17 @@
     <header>
         <div class="backgroundImg"></div>
 
-        <div class="searchblock">
-            <input type="text" class="searchMain" placeholder= "Search">
-        </div>
+        <form class="searchblock">
+            <input type="text" class="searchMain" placeholder="Search">
+            <button type="submit" id="searchinput"class="mainButton">Search</button>
+        </form>
         </div>
     </header>
 
     <main>
         <div class="artResults">
         
-    </div>
+        </div>
     </main>
 
 </body>

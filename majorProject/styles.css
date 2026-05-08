@@ -21,7 +21,8 @@
 
     /**** Art information***************/
     --inputwidth: 75vw;
-    --randomartimg: 20em;
+    --randomartimgheight: 45vw;;
+    --randomartimgwidth: auto;
     --randomartexitplacement: 90%;
     
 }
@@ -160,9 +161,14 @@ body.showartModal #randomArtModal{
     color: #7E746D;
 }
 
-.apiimg img{
-    max-height: var(--randomartimg);
-    max-width: auto;
+.randimg{
+    display: flex;
+    justify-content: center;
+}
+
+.randimg img{
+    max-height:var(--randomartimgheight);
+    max-width: var(--randomartimgwidth);
     object-fit: contain;
 }
 
@@ -213,6 +219,10 @@ header{
     border-radius: 3px;
 }
 
+.searchblock .mainbutton{
+    position: absolute;
+    top: 45vh;
+}
 /**********Art**************************************************************/
 main{
     display: flex;
@@ -265,16 +275,16 @@ main{
     --mainButtonFont: 1rem;
 
     /**** Art information***************/
-    --artistName: 1.7rem;
+    --artistName: 2rem;
     --apiimg: 23vw;
-    --artPeice: 2rem;
-    --date: 1.7rem;
+    --artPeice: 1.7rem;
+    --date: 1.6rem;
     --description:1.5rem;
     --formfontsize: 1rem;
 
     /**** Art information***************/
     --inputwidth: 75vw;
-    --randomartimg: 30em;
+    --randomartimgheight: 30em;
     --randomartexitplacement: 97%;
 
 

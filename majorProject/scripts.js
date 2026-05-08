@@ -1,10 +1,11 @@
 
 //im scared
 
-//this url will determine the random api 
-const url = "https://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_display,main_reference_number,image_idhttps://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_display,main_reference_number,image_id&limit=20";
+//this will be the first url to start and then will change with the seach function SEACH
+let url = "https://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_display,main_reference_number,image_idhttps://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_display,main_reference_number,image_id&limit=20";
 let random = document.querySelector('.randomart');
 
+//you already know who it is
 async function getData(url) {
     try {
         const response = await fetch(url);
@@ -19,8 +20,7 @@ async function getData(url) {
     }
 }
 
-
-//Takes a random 
+//Takes a random peice from the og link
 function randpiece(randomNumber){
     let randomArtNum = Math.floor(Math.random() * randomNumber.data.length);
     console.log(randomArtNum);
@@ -35,19 +35,20 @@ function randomArt(artObject){
     let randartPeice = random.querySelector('.artPeice');
     let randdate = random.querySelector('.date');
     let randdescription = random.querySelector('.description');
-    let randimg = random.querySelector('.apiimg');
+    let randimg = random.querySelector('.randimg');
 
 //changing the information in the randomart div in the dom
     randartistName.innerHTML = artObject.data[randomArtNum].title;
     randartPeice.innerHTML = artObject.data[randomArtNum].artist_display;
     randdate.innerHTML = artObject.data[randomArtNum].date_display;
     randdescription.innerHTML = artObject.data[randomArtNum].id;
-    randimg.innerHTML = "<img class='imgsize' src='https://www.artic.edu/iiif/2/"+ artObject.data[randomArtNum].image_id +"/full/843,/0/default.jpg'>";
+    randimg.innerHTML = "<img src='https://www.artic.edu/iiif/2/"+ artObject.data[randomArtNum].image_id +"/full/843,/0/default.jpg'>";
 
 
     //big shoutout to this video for unerstanding the link and with the random art: https://www.youtube.com/watch?v=L8bCI0_u3As
 }
 
+//sets up cards in html
 function createcards(artObject){
    let results = artObject.data;
    let artResults = document.querySelector(".artResults");
@@ -93,6 +94,21 @@ function createcards(artObject){
    });
 }
 
+//this function is for the home search, im only using an artist for that out of simplicity
+let searchbox = document.querySelector('.searchMain');
+let searchblock = document.querySelector('.searchblock');
+let keyword="";
+let page =1;
+
+function searchArtist(){
+    keyword = searchbox.value;
+    let url = "https://api.artic.edu/api/v1/artworks?fields=id,title,artist_display=${keyword},date_display=${},main_reference_number,image_idhttps://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_display,main_reference_number,image_id&limit=20";
+
+    getData(url).then(function (result){
+    console.log(result);
+    createcards(result);
+    }); 
+}
 
 //when the DOM loads and my sanity is gone
 document.addEventListener("DOMContentLoaded", function () {
@@ -129,10 +145,18 @@ document.addEventListener("DOMContentLoaded", function () {
         createcards(result);
 
         //changing random art with the button 
-        document.querySelector(".mainButton").addEventListener("click", function() {
+        document.querySelector("#randartgen").addEventListener("click", function() {
             randomArt(result);
         });
     });
+
+    searchblock.addEventListener("submit", (e)=>{
+        e.preventDefault();
+        page = 1;
+        searchArtist();
+        console.log("pressed enter");
+    });
+
 
 
 });
