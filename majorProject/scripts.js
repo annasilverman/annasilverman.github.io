@@ -2,7 +2,7 @@
 //im scared
 
 //this will be the first url to start and then will change with the seach function SEACH
-let url = "https://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_display,main_reference_number,image_idhttps://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_display,main_reference_number,image_id&limit=20";
+let url = "https://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_display,main_reference_number,image_id&limit=20";
 let random = document.querySelector('.randomart');
 
 //you already know who it is
@@ -52,6 +52,7 @@ function randomArt(artObject){
 function createcards(artObject){
    let results = artObject.data;
    let artResults = document.querySelector(".artResults");
+   artResults.innerHTML = ""; //clears the cards beforehand
 
    //this makes the things display
    results.forEach((result) =>{
@@ -102,7 +103,7 @@ let page =1;
 
 function searchArtist(){
     keyword = searchbox.value;
-    let url = "https://api.artic.edu/api/v1/artworks?fields=id,title,artist_display=${keyword},date_display=${},main_reference_number,image_idhttps://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_display,main_reference_number,image_id&limit=20";
+    let url = `https://api.artic.edu/api/v1/artworks/search?q=${(keyword)}`;
 
     getData(url).then(function (result){
     console.log(result);
@@ -125,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("clicked");
     });
 
-        //toggles random art on
+    //toggles random art on
     document.querySelector("#randArt").addEventListener("click", function(){
         document.body.classList.toggle("showartModal");
         console.log("clicked");
@@ -152,7 +153,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     searchblock.addEventListener("submit", (e)=>{
         e.preventDefault();
-        page = 1;
         searchArtist();
         console.log("pressed enter");
     });
